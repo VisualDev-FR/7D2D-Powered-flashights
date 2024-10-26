@@ -1,0 +1,4 @@
+Key,english,french
+aa_battery,1.5V AA Battery,Pile AA 1.5V
+aa_battery_pack_2,1.5V AA Battery box,Boite de 2 piles AA 1.5V
+aa_battery_pack_4,1.5V AA Battery box,Boite de 4 piles AA 1.5V
