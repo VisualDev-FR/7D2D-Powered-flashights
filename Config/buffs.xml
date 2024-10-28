@@ -15,7 +15,7 @@ MinEventActionSetTransformActive
             <update_rate value="1" />
 
             <effect_group name="poweredFlashLight">
-                <triggered_effect trigger="onSelfBuffUpdate" action="MinEventActionDecayFlashLight, PoweredFlashlights" event="action_decay_flashlight" />
+                <triggered_effect trigger="onSelfBuffUpdate" action="MinEventActionDecayFlashLight, PoweredFlashlights" />
             </effect_group>
         </buff>
 
@@ -24,7 +24,7 @@ MinEventActionSetTransformActive
             <update_rate value="1" />
 
             <effect_group name="poweredHeadLight">
-                <triggered_effect trigger="onSelfBuffUpdate" action="MinEventActionDecayHeadLight, PoweredFlashlights" event="action_decay_flashlight" />
+                <triggered_effect trigger="onSelfBuffUpdate" action="MinEventActionDecayHeadLight, PoweredFlashlights" />
             </effect_group>
         </buff>
 
