@@ -14,7 +14,6 @@ public class MinEventActionDecayHeadLight : MinEventActionDecayLightAbstract
 
         if (player == null || player.parts == null || (!player.parts.ContainsKey(headLightPropFPV) && !player.parts.ContainsKey(headLightPropTPV)))
         {
-            Log.Out("no headlight on player");
             return false;
         }
 
