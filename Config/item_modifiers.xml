@@ -25,7 +25,8 @@
             <passive_effect name="DegradationMax" operation="base_set" value="300,600,900,1200,1500,1800" tier="1,2,3,4,5,6" />
             <triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffPoweredGunLight" />
             <triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffPoweredGunLight" />
-            <!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffPoweredGunLight" /> -->
+            <triggered_effect trigger="onSelfHoldingItemCreated" action="AddBuff" buff="buffPoweredGunLight" />
+            <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffPoweredGunLight" />
         </effect_group>
     </append>
 

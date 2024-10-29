@@ -27,6 +27,12 @@ public class MinEventActionDecayGunLight : MinEventActionDecayLightAbstract
     public override Transform GetLightTransform(MinEventParams _params)
     {
         var parent = _params.Self.inventory.GetHoldingItemTransform();
+
+        if (parent is null)
+        {
+            return null;
+        }
+
         return GameUtils.FindDeepChild(parent, flashLightSourceProp);
     }
 
