@@ -26,7 +26,6 @@
             <triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffPoweredGunLight" />
             <triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffPoweredGunLight" />
             <triggered_effect trigger="onSelfHoldingItemCreated" action="AddBuff" buff="buffPoweredGunLight" />
-            <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffPoweredGunLight" />
         </effect_group>
     </append>
 

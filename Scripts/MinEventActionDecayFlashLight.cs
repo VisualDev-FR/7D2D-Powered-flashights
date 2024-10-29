@@ -8,6 +8,11 @@ public class MinEventActionDecayFlashLight : MinEventActionDecayLightAbstract
         return _params.Self.inventory.holdingItemItemValue;
     }
 
+    public override string GetBuffName()
+    {
+        return "buffPoweredFlashLight";
+    }
+
     public override Transform GetLightTransform(MinEventParams _params)
     {
         Transform parent = _params.Self.inventory.GetHoldingItemTransform();

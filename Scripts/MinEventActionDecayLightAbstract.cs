@@ -17,6 +17,8 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
 
     public abstract Transform GetLightTransform(MinEventParams _params);
 
+    public abstract string GetBuffName();
+
     public virtual void AfterExecute(EntityAlive player) { }
 
     protected const string lightSourceProp = "lightSource";
@@ -24,14 +26,18 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
     public override void Execute(MinEventParams _params)
     {
         var player = _params.Self;
+        var buffName = GetBuffName();
         var lightItemValue = GetLightItemValue(_params);
         var lightTransform = GetLightTransform(_params);
 
         if (lightItemValue is null) Log.Out("null itemValue");
         if (lightTransform is null) Log.Out("null Transform");
 
-        if (player is null || lightItemValue is null || lightItemValue.Activated == 0)
+        if (lightItemValue is null || lightItemValue.Activated == 0)
+        {
+            player.Buffs.RemoveBuff(buffName);
             return;
+        }
 
         float remainingUseTimes = lightItemValue.MaxUseTimes - lightItemValue.UseTimes;
 

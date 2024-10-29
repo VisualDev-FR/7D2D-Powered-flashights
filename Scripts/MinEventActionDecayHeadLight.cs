@@ -20,6 +20,11 @@ public class MinEventActionDecayHeadLight : MinEventActionDecayLightAbstract
         return base.CanExecute(_eventType, _params);
     }
 
+    public override string GetBuffName()
+    {
+        return "buffPoweredHeadLight";
+    }
+
     public override ItemValue GetLightItemValue(MinEventParams _params)
     {
         if (TryGetHeadLight(_params.Self, out var headLightItemValue))
