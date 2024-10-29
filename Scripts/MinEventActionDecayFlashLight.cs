@@ -10,7 +10,8 @@ public class MinEventActionDecayFlashLight : MinEventActionDecayLightAbstract
 
     public override Transform GetLightTransform(MinEventParams _params)
     {
-        return _params.Self.inventory.GetHoldingItemTransform();
+        Transform parent = _params.Self.inventory.GetHoldingItemTransform();
+        return GameUtils.FindDeepChild(parent, lightSourceProp);
     }
 
     public override void AfterExecute(EntityAlive player)

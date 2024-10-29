@@ -11,7 +11,7 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
     // follows a cubic curve, to have more frequent sparkles when the light has a low battery
     public static readonly HashSet<float> sparkleTimes = new HashSet<float>() { 0, 13, 25, 41, 61, 85, 113, 145, 181, 221, 265, 313, 365, 421, 481, 545, 613, 685, 761, 841, 925, 1013, 1105, 1201, 1301, 1405, 1513, 1625, 1741, 1861 };
 
-    private static Random random = new Random();
+    private static readonly Random random = new Random();
 
     public abstract ItemValue GetLightItemValue(MinEventParams _params);
 
@@ -19,11 +19,16 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
 
     public virtual void AfterExecute(EntityAlive player) { }
 
+    protected const string lightSourceProp = "lightSource";
+
     public override void Execute(MinEventParams _params)
     {
         var player = _params.Self;
         var lightItemValue = GetLightItemValue(_params);
         var lightTransform = GetLightTransform(_params);
+
+        if (lightItemValue is null) Log.Out("null itemValue");
+        if (lightTransform is null) Log.Out("null Transform");
 
         if (player is null || lightItemValue is null || lightItemValue.Activated == 0)
             return;
@@ -35,6 +40,8 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
             GameManager.Instance.StartCoroutine(LightSparkleCoroutine(lightTransform, keepActivated: remainingUseTimes > 0));
         }
 
+        Log.Out($"Decaying '{lightItemValue.ItemClass.Name}', remaining: {remainingUseTimes} ({lightItemValue.UseTimes} / {lightItemValue.MaxUseTimes})");
+
         if (remainingUseTimes <= 0)
         {
             DeactivateFlashLight(player, lightItemValue);
@@ -44,8 +51,6 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
         lightItemValue.UseTimes++;
 
         AfterExecute(player);
-
-        Log.Out($"Decaying {lightItemValue.ItemClass.Name}, usetimes: {lightItemValue.UseTimes}");
     }
 
     private void DeactivateFlashLight(EntityAlive player, ItemValue itemValue)
@@ -81,15 +86,14 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
 
     private void SetLightActive(bool isActive, Transform transform)
     {
-        if (transform != null)
+        if (transform == null)
         {
-            Transform transform2 = GameUtils.FindDeepChild(transform, "lightSource");
-            if (!(transform2 == null))
-            {
-                transform2.gameObject.SetActive(isActive);
-                LightManager.LightChanged(transform2.position + Origin.position);
-            }
+            Log.Out("null transform");
+            return;
         }
+
+        transform.gameObject.SetActive(isActive);
+        LightManager.LightChanged(transform.position + Origin.position);
     }
 
 }

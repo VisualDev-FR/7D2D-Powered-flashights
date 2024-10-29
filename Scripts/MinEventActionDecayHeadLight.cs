@@ -32,6 +32,8 @@ public class MinEventActionDecayHeadLight : MinEventActionDecayLightAbstract
 
     public override Transform GetLightTransform(MinEventParams _params)
     {
+        Transform parent = null;
+
         if (!(_params.Self is EntityPlayerLocal player))
         {
             return null;
@@ -39,15 +41,18 @@ public class MinEventActionDecayHeadLight : MinEventActionDecayLightAbstract
 
         if (player.bFirstPersonView && player.parts.TryGetValue(headLightPropFPV, out var fpvTransform))
         {
-            return fpvTransform;
+            parent = fpvTransform;
         }
 
         if (!player.bFirstPersonView && player.parts.TryGetValue(headLightPropTPV, out var tpvTransform))
         {
-            return tpvTransform;
+            parent = tpvTransform;
         }
 
-        return null;
+        if (parent is null)
+            return null;
+
+        return GameUtils.FindDeepChild(parent, lightSourceProp);
     }
 
     private bool TryGetHeadLight(EntityAlive player, out ItemValue headLightMod)

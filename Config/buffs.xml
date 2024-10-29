@@ -16,5 +16,12 @@
             </effect_group>
         </buff>
 
+        <buff name="buffPoweredGunLight">
+            <update_rate value="1" />
+            <effect_group name="poweredHeadLight">
+                <triggered_effect trigger="onSelfBuffUpdate" action="MinEventActionDecayGunLight, PoweredFlashlights" />
+            </effect_group>
+        </buff>
+
     </append>
 </configs>
