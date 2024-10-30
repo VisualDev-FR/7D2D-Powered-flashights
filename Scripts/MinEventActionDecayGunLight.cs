@@ -6,10 +6,7 @@ public class MinEventActionDecayGunLight : MinEventActionDecayLightAbstract
 
     private const string flashLightSourceProp = "flashlight_lightSource";
 
-    public override string GetBuffName()
-    {
-        return "buffPoweredGunLight";
-    }
+    public override string BuffName => "buffPoweredGunLight";
 
     public override ItemValue GetLightItemValue(MinEventParams _params)
     {

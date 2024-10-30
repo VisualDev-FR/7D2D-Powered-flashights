@@ -8,6 +8,8 @@ public class MinEventActionDecayHeadLight : MinEventActionDecayLightAbstract
 
     private const string modArmorHelmetLightProp = "modArmorHelmetLight";
 
+    public override string BuffName => "buffPoweredHeadLight";
+
     public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
     {
         var player = _params.Self;
@@ -18,11 +20,6 @@ public class MinEventActionDecayHeadLight : MinEventActionDecayLightAbstract
         }
 
         return base.CanExecute(_eventType, _params);
-    }
-
-    public override string GetBuffName()
-    {
-        return "buffPoweredHeadLight";
     }
 
     public override ItemValue GetLightItemValue(MinEventParams _params)

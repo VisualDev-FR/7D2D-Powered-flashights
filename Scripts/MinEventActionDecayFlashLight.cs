@@ -1,16 +1,12 @@
-
 using UnityEngine;
 
 public class MinEventActionDecayFlashLight : MinEventActionDecayLightAbstract
 {
+    public override string BuffName => "buffPoweredFlashLight";
+
     public override ItemValue GetLightItemValue(MinEventParams _params)
     {
         return _params.Self.inventory.holdingItemItemValue;
-    }
-
-    public override string GetBuffName()
-    {
-        return "buffPoweredFlashLight";
     }
 
     public override Transform GetLightTransform(MinEventParams _params)

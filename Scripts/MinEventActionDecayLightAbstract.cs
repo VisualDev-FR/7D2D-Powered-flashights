@@ -4,9 +4,9 @@ using UnityEngine;
 
 using Random = System.Random;
 
-
 public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedBase
 {
+
     // values in seconds, which say when the sparkle effect must be played
     // follows a cubic curve, to have more frequent sparkles when the light has a low battery
     public static readonly HashSet<float> sparkleTimes = new HashSet<float>() { 0, 13, 25, 41, 61, 85, 113, 145, 181, 221, 265, 313, 365, 421, 481, 545, 613, 685, 761, 841, 925, 1013, 1105, 1201, 1301, 1405, 1513, 1625, 1741, 1861 };
@@ -17,7 +17,7 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
 
     public abstract Transform GetLightTransform(MinEventParams _params);
 
-    public abstract string GetBuffName();
+    public abstract string BuffName { get; }
 
     public virtual void AfterExecute(EntityAlive player) { }
 
@@ -26,16 +26,12 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
     public override void Execute(MinEventParams _params)
     {
         var player = _params.Self;
-        var buffName = GetBuffName();
         var lightItemValue = GetLightItemValue(_params);
         var lightTransform = GetLightTransform(_params);
 
-        if (lightItemValue is null) Log.Out("null itemValue");
-        if (lightTransform is null) Log.Out("null Transform");
-
         if (lightItemValue is null || lightItemValue.Activated == 0)
         {
-            player.Buffs.RemoveBuff(buffName);
+            player.Buffs.RemoveBuff(BuffName);
             return;
         }
 
@@ -43,10 +39,8 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
 
         if (lightTransform != null && sparkleTimes.Contains(remainingUseTimes))
         {
-            GameManager.Instance.StartCoroutine(LightSparkleCoroutine(lightTransform, keepActivated: remainingUseTimes > 0));
+            GameManager.Instance.StartCoroutine(LightSparklingCoroutine(lightTransform, keepActivated: remainingUseTimes > 0));
         }
-
-        Log.Out($"Decaying '{lightItemValue.ItemClass.Name}', remaining: {remainingUseTimes} ({lightItemValue.UseTimes} / {lightItemValue.MaxUseTimes})");
 
         if (remainingUseTimes <= 0)
         {
@@ -66,7 +60,7 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
         itemValue.Activated = 0;
     }
 
-    private IEnumerator LightSparkleCoroutine(Transform transform, bool keepActivated)
+    private IEnumerator LightSparklingCoroutine(Transform transform, bool keepActivated)
     {
         float scale = 0.10f;
 
@@ -92,9 +86,9 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
 
     private void SetLightActive(bool isActive, Transform transform)
     {
-        if (transform == null)
+        if (transform is null)
         {
-            Log.Out("null transform");
+            Log.Warning($"[PoweredFlashLights] MinEventActionDecayLightAbstract::SetLightActive => null transform");
             return;
         }
 

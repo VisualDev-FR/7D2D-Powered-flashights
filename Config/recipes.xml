@@ -4,9 +4,9 @@
     <remove xpath="/recipes/recipe[@name='modArmorHelmetLight']" />
     <remove xpath="/recipes/recipe[@name='modGunFlashlight']" />
 
+    <!-- TODO: add progression.xml + make recipes learnable -->
     <append xpath="/recipes">
 
-        <!-- tiered lights -->
         <recipe name="meleeToolFlashlight02" count="1" craft_area="workbench" tags="workbenchCrafting" always_unlocked="true">
             <ingredient name="resourceForgedIron" count="1" />
             <ingredient name="resourceElectricParts" count="10" />
@@ -47,15 +47,10 @@
             </effect_group>
         </recipe>
 
-        <!-- aa_battery -->
-        <recipe name="aa_battery" count="5" craft_area="chemistryStation" tags="chemStationCrafting" craft_time="20" craft_exp_gain="500" always_unlocked="true">
+        <recipe name="aa_battery" count="5" craft_area="chemistryStation" tags="chemStationCrafting" craft_time="20" craft_exp_gain="100" always_unlocked="true">
             <ingredient name="resourceScrapLead" count="10" />
             <ingredient name="resourceAcid" count="1" />
             <ingredient name="resourceScrapPolymers" count="10" />
-            <ingredient name="resourceLegendaryParts" count="0" />
-            <effect_group>
-                <passive_effect name="CraftingIngredientCount" level="6" operation="base_add" value="1" tags="resourceLegendaryParts" />
-            </effect_group>
         </recipe>
 
     </append>

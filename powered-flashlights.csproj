@@ -67,11 +67,11 @@
 
     <!-- scripts -->
     <ItemGroup>
-        <Compile Include="Scripts/ModApi.cs" />
         <Compile Include="Scripts/MinEventActionDecayHeadLight.cs" />
         <Compile Include="Scripts/MinEventActionDecayFlashLight.cs" />
         <Compile Include="Scripts/MinEventActionDecayGunLight.cs" />
         <Compile Include="Scripts/MinEventActionDecayLightAbstract.cs" />
+        <Compile Include="Scripts/ModApi.cs" />
     </ItemGroup>
 
     <PropertyGroup>
