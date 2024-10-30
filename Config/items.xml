@@ -33,6 +33,10 @@
             <property name="CraftingIngredientTime" value="9" />
             <property name="Group" value="Resources" />
             <property name="UnlockedBy" value="craftingFlashLights" />
+            <property name="DescriptionKey" value="aaBatteryDesc" />
+            <property name="SoundPickup" value="shotgunshells_grab" />
+            <property name="SoundPlace" value="shotgunshells_place" />
+
         </item>
 
         <item name="aa_battery_pack_4">
@@ -47,8 +51,9 @@
             <property name="EconomicBundleSize" value="12" />
             <property name="CraftingIngredientTime" value="9" />
             <property name="Group" value="Resources" />
-            <property name="SoundPickup" value="ammobox_grab" />
-            <property name="SoundPlace" value="ammobox_place" />
+            <property name="SoundPickup" value="drug_covertcats_grab" />
+            <property name="SoundPlace" value="drug_covertcats_place" />
+            <property name="DescriptionKey" value="aa_battery_pack_4" />
 
             <property class="Action0">
                 <property name="Class" value="OpenBundle" />
@@ -71,8 +76,9 @@
             <property name="EconomicBundleSize" value="12" />
             <property name="CraftingIngredientTime" value="9" />
             <property name="Group" value="Resources" />
-            <property name="SoundPickup" value="ammobox_grab" />
-            <property name="SoundPlace" value="ammobox_place" />
+            <property name="SoundPickup" value="drug_covertcats_grab" />
+            <property name="SoundPlace" value="drug_covertcats_place" />
+            <property name="DescriptionKey" value="aa_battery_pack_2" />
 
             <property class="Action0">
                 <property name="Class" value="OpenBundle" />

@@ -7,3 +7,4 @@ craftingFlashLightName,FireFLy,Luciole
 flashLightsT1,FlashLights,Lampe de poche
 flashLightsT2,Gun FlashLights,Lampe d'arme
 flashLightsT3,Head lights,Lampe de casque
+aaBatteryDesc,A 1.5 V battery designed to efficiently power small electronic devices.,Une batterie de 1.5 V conçue pour alimenter efficacement de petits appareils électroniques.
