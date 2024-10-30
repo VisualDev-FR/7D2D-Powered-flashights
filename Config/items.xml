@@ -5,6 +5,8 @@
         <property name="ShowQuality" value="true" />
         <property name="RepairTools" value="aa_battery" />
         <property name="DegradationBreaksAfter" value="false" />
+        <property name="UnlockedBy" value="craftingFlashLights" />
+
 
         <effect_group>
             <passive_effect name="DegradationMax" operation="base_set" value="300,600,900,1200,1500,1800" tier="1,2,3,4,5,6" />
@@ -30,6 +32,7 @@
             <property name="EconomicBundleSize" value="12" />
             <property name="CraftingIngredientTime" value="9" />
             <property name="Group" value="Resources" />
+            <property name="UnlockedBy" value="craftingFlashLights" />
         </item>
 
         <item name="aa_battery_pack_4">
@@ -80,5 +83,10 @@
             </property>
         </item>
 
+    </append>
+
+    <!-- electricianSkillMagazine -->
+    <append xpath="/items/item[@name='electricianSkillMagazine']/effect_group">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="craftingFlashLights" level="1" />
     </append>
 </configs>

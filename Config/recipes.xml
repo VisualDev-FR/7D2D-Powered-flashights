@@ -7,20 +7,20 @@
     <!-- TODO: add progression.xml + make recipes learnable -->
     <append xpath="/recipes">
 
-        <recipe name="meleeToolFlashlight02" count="1" craft_area="workbench" tags="workbenchCrafting" always_unlocked="true">
+        <recipe name="meleeToolFlashlight02" count="1" craft_area="workbench" tags="learnable,craftingFlashLights,workbenchCrafting">
             <ingredient name="resourceForgedIron" count="1" />
             <ingredient name="resourceElectricParts" count="10" />
             <ingredient name="resourceDuctTape" count="4" />
             <ingredient name="resourceScrapPolymers" count="4" />
-
             <ingredient name="resourceLegendaryParts" count="0" />
+
             <effect_group>
                 <passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value="1,5" tags="resourceForgedIron,resourceElectricParts,resourceDuctTape,resourceScrapPolymers" />
                 <passive_effect name="CraftingIngredientCount" level="6" operation="base_add" value="1" tags="resourceLegendaryParts" />
             </effect_group>
         </recipe>
 
-        <recipe name="modArmorHelmetLight" count="1" craft_area="workbench" tags="workbenchCrafting" always_unlocked="true">
+        <recipe name="modArmorHelmetLight" count="1" craft_area="workbench" tags="learnable,craftingFlashLights,workbenchCrafting">
             <ingredient name="resourceForgedSteel" count="5" />
             <ingredient name="resourceScrapPolymers" count="2" />
             <ingredient name="resourceDuctTape" count="2" />
@@ -34,7 +34,7 @@
             </effect_group>
         </recipe>
 
-        <recipe name="modGunFlashlight" count="1" craft_area="workbench" tags="workbenchCrafting" always_unlocked="true">
+        <recipe name="modGunFlashlight" count="1" craft_area="workbench" tags="learnable,craftingFlashLights,workbenchCrafting">
             <ingredient name="resourceScrapPolymers" count="10" />
             <ingredient name="resourceGlue" count="2" />
             <ingredient name="resourceElectricParts" count="5" />
@@ -47,7 +47,7 @@
             </effect_group>
         </recipe>
 
-        <recipe name="aa_battery" count="5" craft_area="chemistryStation" tags="chemStationCrafting" craft_time="20" craft_exp_gain="100" always_unlocked="true">
+        <recipe name="aa_battery" count="5" craft_area="chemistryStation" tags="learnable,craftingFlashLights,chemStationCrafting" craft_time="20" craft_exp_gain="100">
             <ingredient name="resourceScrapLead" count="10" />
             <ingredient name="resourceAcid" count="1" />
             <ingredient name="resourceScrapPolymers" count="10" />

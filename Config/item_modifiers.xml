@@ -6,6 +6,7 @@
         <property name="ShowQuality" value="true" />
         <property name="RepairTools" value="aa_battery" />
         <property name="DegradationBreaksAfter" value="false" />
+        <property name="UnlockedBy" value="craftingFlashLights" />
 
         <effect_group>
             <passive_effect name="DegradationMax" operation="base_set" value="300,600,900,1200,1500,1800" tier="1,2,3,4,5,6" />
@@ -20,6 +21,7 @@
         <property name="ShowQuality" value="true" />
         <property name="RepairTools" value="aa_battery" />
         <property name="DegradationBreaksAfter" value="false" />
+        <property name="UnlockedBy" value="craftingFlashLights" />
 
         <effect_group>
             <passive_effect name="DegradationMax" operation="base_set" value="300,600,900,1200,1500,1800" tier="1,2,3,4,5,6" />

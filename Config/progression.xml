@@ -1,0 +1,39 @@
+<configs>
+
+    <!-- TODO: Add aa_battery -->
+    <append xpath="/progression/crafting_skills">
+
+        <crafting_skill name="craftingFlashLights" max_level="80" parent="attCrafting" name_key="craftingFlashLightName" desc_key="craftingFlashLightDesc" long_desc_key="craftingElectricianLongDesc" icon="ui_game_symbol_lightbulb">
+
+            <display_entry icon="meleeToolFlashlight02" name_key="flashLightsT1" has_quality="true" unlock_level="5,10,15,20,25,30">
+                <unlock_entry item="meleeToolFlashlight02" unlock_tier="1" />
+            </display_entry>
+
+            <display_entry icon="modGunFlashlight" name_key="flashLightsT2" has_quality="true" unlock_level="30,35,40,45,50,55">
+                <unlock_entry item="modGunFlashlight" unlock_tier="1" />
+            </display_entry>
+
+            <display_entry icon="modArmorHelmetLight" name_key="flashLightsT3" has_quality="true" unlock_level="55,60,65,70,75,80">
+                <unlock_entry item="modArmorHelmetLight" unlock_tier="1" />
+            </display_entry>
+
+            <display_entry icon="aa_battery" name_key="aa_battery" has_quality="false" unlock_level="80">
+                <unlock_entry item="aa_battery" unlock_tier="1" />
+            </display_entry>
+
+            <effect_group>
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,80" value="1" tags="meleeToolFlashlight02" />
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,80" value="1" tags="modGunFlashlight" />
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,80" value="1" tags="modArmorHelmetLight" />
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="80,80" value="1" tags="aa_battery" />
+
+                <passive_effect name="CraftingTier" operation="base_add" level="10,15,20,25,30,80" value="1,2,3,4,5,5" tags="meleeToolFlashlight02" />
+                <passive_effect name="CraftingTier" operation="base_add" level="35,40,45,50,55,80" value="1,2,3,4,5,5" tags="modGunFlashlight" />
+                <passive_effect name="CraftingTier" operation="base_add" level="60,65,70,75,80" value="1,2,3,4,5" tags="modArmorHelmetLight" />
+            </effect_group>
+
+        </crafting_skill>
+
+    </append>
+
+</configs>
