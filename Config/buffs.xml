@@ -2,21 +2,21 @@
 
     <append xpath="/buffs">
 
-        <buff name="buffPoweredFlashLight">
+        <buff name="buffPoweredFlashLight" hidden="true">
             <update_rate value="1" />
             <effect_group name="poweredFlashLight">
                 <triggered_effect trigger="onSelfBuffUpdate" action="MinEventActionDecayFlashLight, PoweredFlashlights" />
             </effect_group>
         </buff>
 
-        <buff name="buffPoweredHeadLight">
+        <buff name="buffPoweredHeadLight" hidden="true">
             <update_rate value="1" />
             <effect_group name="poweredHeadLight">
                 <triggered_effect trigger="onSelfBuffUpdate" action="MinEventActionDecayHeadLight, PoweredFlashlights" />
             </effect_group>
         </buff>
 
-        <buff name="buffPoweredGunLight">
+        <buff name="buffPoweredGunLight" hidden="true">
             <update_rate value="1" />
             <effect_group name="poweredHeadLight">
                 <triggered_effect trigger="onSelfBuffUpdate" action="MinEventActionDecayGunLight, PoweredFlashlights" />
