@@ -23,5 +23,8 @@
             </effect_group>
         </buff>
 
+        <buff name="buffFlashlightDisabled">
+        </buff>
+
     </append>
 </configs>

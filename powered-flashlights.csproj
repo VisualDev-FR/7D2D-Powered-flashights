@@ -65,13 +65,18 @@
 
     </ItemGroup>
 
+    <!-- Harmony -->
+    <ItemGroup>
+        <Compile Include="Harmony/H_XUiC_Radial.cs" />
+        <Compile Include="Harmony/ModApi.cs" />
+    </ItemGroup>
+
     <!-- scripts -->
     <ItemGroup>
         <Compile Include="Scripts/MinEventActionDecayHeadLight.cs" />
         <Compile Include="Scripts/MinEventActionDecayFlashLight.cs" />
         <Compile Include="Scripts/MinEventActionDecayGunLight.cs" />
         <Compile Include="Scripts/MinEventActionDecayLightAbstract.cs" />
-        <Compile Include="Scripts/ModApi.cs" />
     </ItemGroup>
 
     <PropertyGroup>
