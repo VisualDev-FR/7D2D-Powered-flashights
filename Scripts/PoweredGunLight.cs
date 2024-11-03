@@ -1,12 +1,10 @@
 using UnityEngine;
 
-public class MinEventActionDecayGunLight : MinEventActionDecayLightAbstract
+public class PoweredGunLight : PoweredLightAbstract
 {
     private const string gunLightProp = "modGunFlashlight";
 
     private const string flashLightSourceProp = "flashlight_lightSource";
-
-    public override string BuffName => "buffPoweredGunLight";
 
     public override ItemValue GetLightItemValue(MinEventParams _params)
     {
@@ -46,7 +44,7 @@ public class MinEventActionDecayGunLight : MinEventActionDecayLightAbstract
 
         foreach (var mod in holdingItem.Modifications)
         {
-            if (mod.ItemClass.Name == gunLightProp)
+            if (mod != null && mod.ItemClass != null && mod.ItemClass.Name == gunLightProp)
             {
                 gunLightItemValue = mod;
                 return true;
@@ -56,9 +54,4 @@ public class MinEventActionDecayGunLight : MinEventActionDecayLightAbstract
         return false;
     }
 
-    public override void AfterExecute(EntityAlive player)
-    {
-        // update the itemStack UI
-        player.inventory.notifyListeners();
-    }
 }

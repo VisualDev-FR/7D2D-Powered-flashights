@@ -1,5 +1,17 @@
 <configs>
 
+    <append xpath="/buffs/buff[@name='buffStatusCheck01']">
+
+        <effect_group>
+            <requirement name="HasBuff" buff="buffFlashlightDisabled" />
+            <requirement name="RequirementHasLightActivated, PoweredFlashLights" />
+
+            <triggered_effect trigger="onSelfBuffUpdate" action="MinEventActionTurnOffLights, PoweredFlashLights" />
+            <triggered_effect trigger="onSelfBuffUpdate" action="LogMessage" message="flashLight buff update" />
+        </effect_group>
+
+    </append>
+
     <append xpath="/buffs">
 
         <buff name="buffPoweredFlashLight" hidden="true">
