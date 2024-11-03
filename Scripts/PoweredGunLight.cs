@@ -8,12 +8,7 @@ public class PoweredGunLight : PoweredLightAbstract
 
     public override ItemValue GetLightItemValue(MinEventParams _params)
     {
-        if (!(_params.Self is EntityPlayerLocal player))
-        {
-            return null;
-        }
-
-        var itemValue = player.inventory.holdingItemItemValue;
+        var itemValue = _params.Self.inventory.holdingItemItemValue;
 
         if (TryGetGunLight(itemValue, out var lightItemValue))
         {

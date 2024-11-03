@@ -39,9 +39,9 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
             return;
         }
 
-        lightItemValue.UseTimes++;
-
         AfterExecute(player);
-    }
 
+        lightItemValue.UseTimes++;
+        player.inventory.notifyListeners();
+    }
 }

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class MinEventActionDecayHeadLight : MinEventActionDecayLightAbstract
 {
     private const string headLightPropFPV = "HeadLight";
@@ -21,6 +19,4 @@ public class MinEventActionDecayHeadLight : MinEventActionDecayLightAbstract
 
         return base.CanExecute(_eventType, _params);
     }
-
-
 }

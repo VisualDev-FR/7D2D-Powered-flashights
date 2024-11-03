@@ -5,8 +5,6 @@ public class MinEventActionTurnOffLights : MinEventActionTargetedBase
         var player = _params.Self;
         var lightSources = PoweredLightAbstract.All();
 
-        Log.Out($"[PoweredFlashLight] lightSources: {lightSources.Count}");
-
         foreach (var lightSource in lightSources)
         {
             var itemValue = lightSource.GetLightItemValue(_params);

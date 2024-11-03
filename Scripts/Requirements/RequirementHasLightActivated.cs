@@ -10,7 +10,6 @@ public class RequirementHasLightActivated : TargetedCompareRequirementBase
         }
 
         int activeLightSourceCount = PoweredLightAbstract.All()
-            .Where(light => light != null)
             .Select(light => light.GetLightItemValue(_params))
             .Count(itemValue => itemValue != null && itemValue.Activated > 0);
 

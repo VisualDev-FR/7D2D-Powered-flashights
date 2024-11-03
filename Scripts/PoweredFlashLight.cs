@@ -6,11 +6,11 @@ public class PoweredFlashLight : PoweredLightAbstract
 
     public override ItemValue GetLightItemValue(MinEventParams _params)
     {
-        var holdingItemValue = _params.Self.inventory.holdingItemItemValue;
+        var itemValue = _params.Self.inventory.holdingItemItemValue;
 
-        if (holdingItemValue != null && holdingItemValue.ItemClass.Name == flashLightProp)
+        if (itemValue != null && itemValue.ItemClass != null && itemValue.ItemClass.Name == flashLightProp)
         {
-            return holdingItemValue;
+            return itemValue;
         }
 
         return null;
