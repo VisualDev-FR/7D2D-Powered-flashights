@@ -5,6 +5,7 @@
         <buff name="buffPoweredFlashLight" hidden="true">
             <update_rate value="1" />
             <effect_group name="poweredFlashLight">
+                <triggered_effect trigger="onSelfBuffStart" action="MinEventActionDecayFlashLight, PoweredFlashlights" />
                 <triggered_effect trigger="onSelfBuffUpdate" action="MinEventActionDecayFlashLight, PoweredFlashlights" />
             </effect_group>
         </buff>
@@ -12,6 +13,7 @@
         <buff name="buffPoweredHeadLight" hidden="true">
             <update_rate value="1" />
             <effect_group name="poweredHeadLight">
+                <triggered_effect trigger="onSelfBuffStart" action="MinEventActionDecayHeadLight, PoweredFlashlights" />
                 <triggered_effect trigger="onSelfBuffUpdate" action="MinEventActionDecayHeadLight, PoweredFlashlights" />
             </effect_group>
         </buff>
@@ -19,6 +21,7 @@
         <buff name="buffPoweredGunLight" hidden="true">
             <update_rate value="1" />
             <effect_group name="poweredHeadLight">
+                <triggered_effect trigger="onSelfBuffStart" action="MinEventActionDecayGunLight, PoweredFlashlights" />
                 <triggered_effect trigger="onSelfBuffUpdate" action="MinEventActionDecayGunLight, PoweredFlashlights" />
             </effect_group>
         </buff>

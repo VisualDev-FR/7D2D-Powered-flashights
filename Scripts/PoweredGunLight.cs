@@ -6,10 +6,6 @@ public class PoweredGunLight : PoweredLightAbstract
 
     private const string flashLightSourceProp = "flashlight_lightSource";
 
-    public override float MinIntensity => 1f;
-
-    public override float MaxIntensity => 0.2f;
-
     public override ItemValue GetLightItemValue(MinEventParams _params)
     {
         var itemValue = _params.Self.inventory.holdingItemItemValue;

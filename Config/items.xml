@@ -6,6 +6,8 @@
         <property name="RepairTools" value="aa_battery" />
         <property name="DegradationBreaksAfter" value="false" />
         <property name="UnlockedBy" value="craftingFlashLights" />
+        <property name="MaxIntensity" value="1.3" />
+        <property name="MinIntensity" value="0.2" />
 
         <effect_group>
             <passive_effect name="DegradationMax" operation="base_set" value="10,60" tier="1,6" />

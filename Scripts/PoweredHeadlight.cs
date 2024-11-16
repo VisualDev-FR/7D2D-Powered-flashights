@@ -8,10 +8,6 @@ public class PoweredHeadLight : PoweredLightAbstract
 
     private const string modArmorHelmetLightProp = "modArmorHelmetLight";
 
-    public override float MinIntensity => 1f;
-
-    public override float MaxIntensity => 0.2f;
-
     public override ItemValue GetLightItemValue(MinEventParams _params)
     {
         if (TryGetHeadLight(_params.Self, out var headLightItemValue))

@@ -53,8 +53,8 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
         float percent = 1f - (itemValue.UseTimes / itemValue.MaxUseTimes);
 
         light.intensity = Utils.FastLerp(
-            PoweredLightSource.MinIntensity,
-            PoweredLightSource.MaxIntensity,
+            itemValue.ItemClass.Properties.GetFloat("MinIntensity"),
+            itemValue.ItemClass.Properties.GetFloat("MaxIntensity"),
             percent
         );
     }
