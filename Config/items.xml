@@ -94,4 +94,10 @@
     <append xpath="/items/item[@name='electricianSkillMagazine']/effect_group">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="craftingFlashLights" level="1" />
     </append>
+
+    <!-- Torch light intensity -->
+    <append xpath="/items/item[@name='meleeToolTorch']">
+        <property name="MaxIntensity" value="0.5" />
+    </append>
+
 </configs>
