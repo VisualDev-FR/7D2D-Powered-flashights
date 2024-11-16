@@ -73,6 +73,7 @@
 
     <!-- Shared scripts -->
     <ItemGroup>
+        <Compile Include="Scripts/Config.cs" />
         <Compile Include="Scripts/FlashlightActions.cs" />
         <Compile Include="Scripts/PoweredLightAbstract.cs" />
         <Compile Include="Scripts/PoweredFlashLight.cs" />

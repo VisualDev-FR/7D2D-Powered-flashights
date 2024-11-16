@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedBase
 {
@@ -39,9 +40,22 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
             return;
         }
 
+        DecreaseLight(lightTransform, lightItemValue);
         AfterExecute(player);
 
         lightItemValue.UseTimes++;
         player.inventory.notifyListeners();
+    }
+
+    private void DecreaseLight(Transform lightSource, ItemValue itemValue)
+    {
+        Light light = lightSource.GetComponent<Light>();
+        float percent = 1f - (itemValue.UseTimes / itemValue.MaxUseTimes);
+
+        light.intensity = Utils.FastLerp(
+            PoweredLightSource.MinIntensity,
+            PoweredLightSource.MaxIntensity,
+            percent
+        );
     }
 }

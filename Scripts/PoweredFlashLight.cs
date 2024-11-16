@@ -4,6 +4,10 @@ public class PoweredFlashLight : PoweredLightAbstract
 {
     private const string flashLightProp = "meleeToolFlashlight02";
 
+    public override float MinIntensity => 0.2f;
+
+    public override float MaxIntensity => 1.3f;
+
     public override ItemValue GetLightItemValue(MinEventParams _params)
     {
         var itemValue = _params.Self.inventory.holdingItemItemValue;
