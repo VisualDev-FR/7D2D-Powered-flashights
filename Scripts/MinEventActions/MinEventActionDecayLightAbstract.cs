@@ -31,12 +31,12 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
 
         if (lightTransform != null && sparkleTimes.Contains(remainingUseTimes))
         {
-            GameManager.Instance.StartCoroutine(FlashlightActions.LightSparklingCoroutine(lightTransform, keepActivated: remainingUseTimes > 0));
+            GameManager.Instance.StartCoroutine(lightSource.LightSparklingCoroutine(lightTransform, keepActivated: remainingUseTimes > 0));
         }
 
         if (remainingUseTimes <= 0)
         {
-            FlashlightActions.DeactivateFlashlight(player, lightItemValue);
+            lightSource.DeactivateFlashlight(player, lightItemValue);
             return;
         }
 

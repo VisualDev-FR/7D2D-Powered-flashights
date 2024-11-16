@@ -13,8 +13,8 @@ public class MinEventActionTurnOffLights : MinEventActionTargetedBase
             if (itemValue is null || itemValue.Activated == 0)
                 continue;
 
-            GameManager.Instance.StartCoroutine(FlashlightActions.LightSparklingCoroutine(transform, keepActivated: false));
-            FlashlightActions.DeactivateFlashlight(player, itemValue);
+            GameManager.Instance.StartCoroutine(lightSource.LightSparklingCoroutine(transform, keepActivated: false));
+            lightSource.DeactivateFlashlight(player, itemValue);
 
             Log.Out($"[PoweredFlashLight] deactivate lightsource: '{itemValue.ItemClass.Name}'");
         }

@@ -1,13 +1,30 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 using Random = System.Random;
 
-public class FlashlightActions
+public abstract class PoweredLightAbstract
 {
+    protected const string lightSourceProp = "lightSource";
+
+    public abstract ItemValue GetLightItemValue(MinEventParams _params);
+
+    public abstract Transform GetLightTransform(MinEventParams _params);
+
     private static readonly Random random = new Random();
 
-    public static IEnumerator LightSparklingCoroutine(Transform transform, bool keepActivated)
+    public static List<PoweredLightAbstract> All()
+    {
+        return new List<PoweredLightAbstract>
+        {
+            new PoweredFlashLight(),
+            new PoweredGunLight(),
+            new PoweredHeadLight(),
+        };
+    }
+
+    public IEnumerator LightSparklingCoroutine(Transform transform, bool keepActivated)
     {
         float scale = 0.10f;
 
@@ -31,14 +48,14 @@ public class FlashlightActions
         yield break;
     }
 
-    public static void DeactivateFlashlight(EntityAlive player, ItemValue itemValue)
+    public void DeactivateFlashlight(EntityAlive player, ItemValue itemValue)
     {
         player.MinEventContext.ItemValue = itemValue;
         itemValue.FireEvent(MinEventTypes.onSelfItemDeactivate, player.MinEventContext);
         itemValue.Activated = 0;
     }
 
-    public static void SetLightActive(bool isActive, Transform transform)
+    public void SetLightActive(bool isActive, Transform transform)
     {
         if (transform is null)
         {

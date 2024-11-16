@@ -72,13 +72,12 @@
         <Compile Include="Harmony/ModApi.cs" />
     </ItemGroup>
 
-    <!-- Shared scripts -->
+    <!-- PoweredLight -->
     <ItemGroup>
-        <Compile Include="Scripts/FlashlightActions.cs" />
-        <Compile Include="Scripts/PoweredLightAbstract.cs" />
-        <Compile Include="Scripts/PoweredFlashLight.cs" />
-        <Compile Include="Scripts/PoweredGunLight.cs" />
-        <Compile Include="Scripts/PoweredHeadLight.cs" />
+        <Compile Include="Scripts/PoweredLights/PoweredFlashLight.cs" />
+        <Compile Include="Scripts/PoweredLights/PoweredGunLight.cs" />
+        <Compile Include="Scripts/PoweredLights/PoweredHeadLight.cs" />
+        <Compile Include="Scripts/PoweredLights/PoweredLightAbstract.cs" />
     </ItemGroup>
 
     <!-- Requirements -->
