@@ -15,8 +15,6 @@ public class RequirementHasLightActivated : TargetedCompareRequirementBase
 
         bool hasLightActivated = activeLightSourceCount > 0;
 
-        Log.Out($"[PoweredFlashLight] activeLightSourceCount: {activeLightSourceCount}");
-
         return invert ? !hasLightActivated : hasLightActivated;
     }
 }

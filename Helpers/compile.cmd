@@ -1,6 +1,6 @@
 @echo off
 
-set MOD_NAME=PoweredFlashlights
+set MOD_NAME=cave-lights
 
 if not defined PATH_7D2D (
     echo Missing env variable: 'PATH_7D2D'

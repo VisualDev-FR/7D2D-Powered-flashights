@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace Harmony
 {
-    public class PoweredFlashLights : IModApi
+    public class CaveLights : IModApi
     {
         public void InitMod(Mod _modInstance)
         {
