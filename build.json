@@ -1,0 +1,10 @@
+{
+    "name": "cave-lights",
+    "csproj": "cave-lights.csproj",
+    "include": [
+        "ModInfo.xml",
+        "Config",
+        "UIAtlases"
+    ],
+    "dependencies": []
+}
