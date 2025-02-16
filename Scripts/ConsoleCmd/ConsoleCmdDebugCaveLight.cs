@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CaveLights;
 
 public class ConsoleCmdDebugCaveLight : ConsoleCmdAbstract
 {
@@ -26,6 +27,10 @@ public class ConsoleCmdDebugCaveLight : ConsoleCmdAbstract
                 TorchScaleCommand(_params);
                 break;
 
+            case "moon":
+                MoonScaleCommand(_params);
+                break;
+
             default:
                 Log.Error($"Invalid or not implemented command: '{_params[0]}'");
                 break;
@@ -48,4 +53,22 @@ public class ConsoleCmdDebugCaveLight : ConsoleCmdAbstract
 
         ItemClass.GetItemClass("meleeToolTorch").Properties.SetValue("MaxIntensity", scale.ToString());
     }
+
+    private static void MoonScaleCommand(List<string> _params)
+    {
+        if (_params.Count == 0)
+        {
+            Logging.Error($"Missing argument: 'scale' (float)");
+            return;
+        }
+
+        if (!float.TryParse(_params[1], out var scale))
+        {
+            Logging.Error($"Invalid argument: '{_params[1]}'");
+            return;
+        }
+
+        CaveLightConfig.moonLightScale = scale;
+    }
+
 }
