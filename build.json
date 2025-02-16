@@ -1,5 +1,5 @@
 {
-    "name": "cave-lights",
+    "name": "TheDescent-cave-lights",
     "csproj": "cave-lights.csproj",
     "include": [
         "ModInfo.xml",
