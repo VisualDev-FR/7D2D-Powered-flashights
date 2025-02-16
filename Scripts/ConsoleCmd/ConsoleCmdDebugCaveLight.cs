@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using CaveLights;
 
 public class ConsoleCmdDebugCaveLight : ConsoleCmdAbstract
 {
@@ -32,7 +31,7 @@ public class ConsoleCmdDebugCaveLight : ConsoleCmdAbstract
                 break;
 
             default:
-                Log.Error($"Invalid or not implemented command: '{_params[0]}'");
+                Logging.Error($"Invalid or not implemented command: '{_params[0]}'");
                 break;
         }
     }

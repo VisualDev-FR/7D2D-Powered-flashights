@@ -3,6 +3,7 @@
     "csproj": "cave-lights.csproj",
     "include": [
         "ModInfo.xml",
+        "ModConfig.xml",
         "Config",
         "UIAtlases"
     ],

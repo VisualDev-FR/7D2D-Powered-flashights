@@ -1,6 +1,8 @@
 public class CaveLightConfig
 {
-    public static float moonLightScale = 0.1f;
+    private static readonly ModConfig config = new ModConfig("CaveLights");
 
-    public static float sunIntensityScale = 1f;
+    public static float moonLightScale = config.GetPropertyFloat("moonLightScale");
+
+    public static float sunIntensityScale = config.GetPropertyFloat("sunIntensityScale");
 }
