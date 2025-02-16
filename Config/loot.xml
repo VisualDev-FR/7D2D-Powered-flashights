@@ -26,4 +26,12 @@
     <append xpath="/lootcontainers/lootgroup[@name='groupMoPower04']">
         <item group="groupBatteryAA" loot_prob_template="med" />
     </append>
+
+    <append xpath="/lootcontainers/lootgroup[@name='caveGroupCampingTents01']">
+        <item group="groupBatteryAA" loot_prob_template="high" />
+    </append>
+
+    <append xpath="/lootcontainers/lootcontainer[@name='caveCntBackpack']">
+        <item group="groupBatteryAA" loot_prob_template="high" />
+    </append>
 </configs>
