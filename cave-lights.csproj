@@ -65,38 +65,10 @@
 
     </ItemGroup>
 
-    <!-- Harmony -->
+    <!-- scripts -->
     <ItemGroup>
-        <Compile Include="Harmony/H_ItemClassTorch.cs" />
-        <Compile Include="Harmony/H_XUiC_Radial.cs" />
-        <Compile Include="Harmony/ModApi.cs" />
-    </ItemGroup>
-
-    <!-- PoweredLight -->
-    <ItemGroup>
-        <Compile Include="Scripts/PoweredLights/PoweredFlashLight.cs" />
-        <Compile Include="Scripts/PoweredLights/PoweredGunLight.cs" />
-        <Compile Include="Scripts/PoweredLights/PoweredHeadLight.cs" />
-        <Compile Include="Scripts/PoweredLights/PoweredLightAbstract.cs" />
-    </ItemGroup>
-
-    <!-- Requirements -->
-    <ItemGroup>
-        <Compile Include="Scripts/Requirements/RequirementHasLightActivated.cs" />
-    </ItemGroup>
-
-    <!-- MinEventActions -->
-    <ItemGroup>
-        <Compile Include="Scripts/MinEventActions/MinEventActionDecayHeadLight.cs" />
-        <Compile Include="Scripts/MinEventActions/MinEventActionDecayFlashLight.cs" />
-        <Compile Include="Scripts/MinEventActions/MinEventActionDecayGunLight.cs" />
-        <Compile Include="Scripts/MinEventActions/MinEventActionDecayLightAbstract.cs" />
-        <Compile Include="Scripts/MinEventActions/MinEventActionTurnOffLights.cs" />
-    </ItemGroup>
-
-    <!-- ConsoleCmd -->
-    <ItemGroup>
-        <compile Include="Scripts/ConsoleCmd/ConsoleCmdDebugCaveLight.cs" />
+        <Compile Include=".\Scripts\**\*.cs" />
+        <Compile Include=".\Harmony\**\*.cs" />
     </ItemGroup>
 
     <PropertyGroup>
