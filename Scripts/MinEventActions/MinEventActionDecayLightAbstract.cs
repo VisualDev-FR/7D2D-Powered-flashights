@@ -55,9 +55,14 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
         player.inventory.notifyListeners();
     }
 
-    private void DecreaseLight(Transform lightSource, ItemValue itemValue)
+    private void DecreaseLight(Transform lightTransform, ItemValue itemValue)
     {
-        Light light = lightSource.GetComponent<Light>();
+        if (lightTransform is null)
+        {
+            return;
+        }
+
+        Light light = lightTransform.GetComponent<Light>();
         float percent = 1f - (itemValue.UseTimes / itemValue.MaxUseTimes);
 
         light.intensity = Utils.FastLerp(
