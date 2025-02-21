@@ -5,4 +5,8 @@ public class CaveLightConfig
     public static float moonLightScale = config.GetFloat("moonLightScale");
 
     public static float sunIntensityScale = config.GetFloat("sunIntensityScale");
+
+    public static bool enableFlashlightsDecay = config.GetBool("enableFlashlightsDecay");
+
+    public static bool enableLightSparkling = config.GetBool("enableLightSparkling");
 }
