@@ -20,6 +20,11 @@ public class XUiC_Radial_handleActivatableItemCommand
         entityPlayer.CollectActivatableItems(__instance.activatableItemPool);
         ItemValue itemValue = __instance.activatableItemPool[_commandIndex];
 
+        if (!IsPoweredItem(itemValue))
+        {
+            return true;
+        }
+
         if (itemValue.Activated == 0 && itemValue.HasQuality && itemValue.UseTimes >= itemValue.MaxUseTimes)
         {
             Manager.PlayInsidePlayerHead(flashlightToggleSoundProp);
@@ -33,6 +38,16 @@ public class XUiC_Radial_handleActivatableItemCommand
         }
 
         return true;
+    }
+
+    private static bool IsPoweredItem(ItemValue itemValue)
+    {
+        if (itemValue is null || itemValue.ItemClass is null)
+        {
+            return false;
+        }
+
+        return itemValue.ItemClass.HasAnyTags(CaveLightConfig.tagPowered);
     }
 
 }

@@ -1,6 +1,7 @@
 <configs>
 
     <!-- meleeToolFlashlight02 -->
+    <append xpath="/items/item[@name='meleeToolFlashlight02']/property[@name='Tags']/@value">,powered</append>
     <append xpath="/items/item[@name='meleeToolFlashlight02']">
         <property name="ShowQuality" value="true" />
         <property name="RepairTools" value="aa_battery" />

@@ -1,7 +1,9 @@
 <configs>
+
     <!-- modArmorHelmetLight -->
     <append xpath="/item_modifiers/item_modifier[@name='modArmorHelmetLight']">
 
+        <property name="Tags" value="powered" />
         <property name="ShowQuality" value="true" />
         <property name="RepairTools" value="aa_battery" />
         <property name="DegradationBreaksAfter" value="false" />
@@ -19,6 +21,7 @@
     <!-- modGunFlashlight -->
     <append xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']">
 
+        <property name="Tags" value="powered" />
         <property name="ShowQuality" value="true" />
         <property name="RepairTools" value="aa_battery" />
         <property name="DegradationBreaksAfter" value="false" />
