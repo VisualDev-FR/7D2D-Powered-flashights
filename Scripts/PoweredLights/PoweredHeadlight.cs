@@ -65,6 +65,9 @@ public class PoweredHeadLight : PoweredLightAbstract
 
         foreach (var mod in equipment.Modifications)
         {
+            if (mod is null || mod.ItemClass is null)
+                continue;
+
             if (mod.ItemClass.Name == modArmorHelmetLightProp)
             {
                 headlightMod = mod;
