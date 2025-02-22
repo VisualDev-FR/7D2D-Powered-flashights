@@ -6,7 +6,6 @@
         <property name="ShowQuality" value="true" />
         <property name="RepairTools" value="aa_battery" />
         <property name="DegradationBreaksAfter" value="false" />
-        <property name="UnlockedBy" value="craftingFlashLights" />
         <property name="MaxIntensity" value="1.3" />
         <property name="MinIntensity" value="0.5" />
 
@@ -33,8 +32,7 @@
             <property name="EconomicValue" value="1" />
             <property name="EconomicBundleSize" value="12" />
             <property name="CraftingIngredientTime" value="9" />
-            <property name="Group" value="Resources" />
-            <property name="UnlockedBy" value="craftingFlashLights" />
+            <property name="Group" value="Resources,Chemicals" />
             <property name="DescriptionKey" value="aaBatteryDesc" />
             <property name="SoundPickup" value="shotgunshells_grab" />
             <property name="SoundPlace" value="shotgunshells_place" />
@@ -91,11 +89,6 @@
             </property>
         </item>
 
-    </append>
-
-    <!-- electricianSkillMagazine -->
-    <append xpath="/items/item[@name='electricianSkillMagazine']/effect_group">
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="craftingFlashLights" level="1" />
     </append>
 
     <!-- Torch light intensity -->
