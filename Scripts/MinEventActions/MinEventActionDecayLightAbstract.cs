@@ -58,11 +58,13 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
     private void DecreaseLight(Transform lightTransform, ItemValue itemValue)
     {
         if (lightTransform is null)
-        {
             return;
-        }
 
         Light light = lightTransform.GetComponent<Light>();
+
+        if (light is null)
+            return;
+
         float percent = 1f - (itemValue.UseTimes / itemValue.MaxUseTimes);
 
         light.intensity = Utils.FastLerp(
