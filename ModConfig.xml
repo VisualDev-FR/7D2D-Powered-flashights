@@ -2,8 +2,6 @@
 
 <modconfig version="1">
 
-    <property name="moonLightScale" value="0.1" />
-    <property name="sunIntensityScale" value="1" />
     <property name="enableFlashlightsDecay" value="true" />
     <property name="enableLightSparkling" value="true" />
 
