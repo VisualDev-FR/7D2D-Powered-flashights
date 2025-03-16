@@ -26,6 +26,10 @@ public class ConsoleCmdDebugCaveLight : ConsoleCmdAbstract
                 TorchScaleCommand(_params);
                 break;
 
+            case "flick":
+                FlickingCommand(_params);
+                break;
+
             default:
                 Logging.Error($"Invalid or not implemented command: '{_params[0]}'");
                 break;
@@ -49,4 +53,8 @@ public class ConsoleCmdDebugCaveLight : ConsoleCmdAbstract
         ItemClass.GetItemClass("meleeToolTorch").Properties.SetValue("MaxIntensity", scale.ToString());
     }
 
+    private void FlickingCommand(List<string> _params)
+    {
+        CaveLightConfig.forceFlicking = true;
+    }
 }

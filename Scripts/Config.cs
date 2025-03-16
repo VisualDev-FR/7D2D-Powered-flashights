@@ -7,4 +7,6 @@ public class CaveLightConfig
     public static bool enableLightSparkling = config.GetBool("enableLightSparkling");
 
     public static readonly FastTags<TagGroup.Global> tagPowered = FastTags<TagGroup.Global>.Parse("powered");
+
+    public static bool forceFlicking = false;
 }

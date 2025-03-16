@@ -59,7 +59,7 @@ public abstract class PoweredLightAbstract
     {
         if (transform is null)
         {
-            Log.Warning($"[CaveLights] MinEventActionDecayLightAbstract::SetLightActive => null transform");
+            Logging.Warning($"PoweredLightAbstract::SetLightActive => null transform");
             return;
         }
 

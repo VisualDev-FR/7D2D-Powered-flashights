@@ -37,9 +37,10 @@ public abstract class MinEventActionDecayLightAbstract : MinEventActionTargetedB
 
         float remainingUseTimes = lightItemValue.MaxUseTimes - lightItemValue.UseTimes;
 
-        if (lightTransform != null && sparkleTimes.Contains(remainingUseTimes))
+        if (CaveLightConfig.forceFlicking || lightTransform != null && sparkleTimes.Contains(remainingUseTimes))
         {
             GameManager.Instance.StartCoroutine(lightSource.LightSparklingCoroutine(lightTransform, keepActivated: remainingUseTimes > 0));
+            CaveLightConfig.forceFlicking = false;
         }
 
         if (remainingUseTimes <= 0)
