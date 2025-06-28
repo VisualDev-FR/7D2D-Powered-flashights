@@ -1,6 +1,6 @@
 public class CaveLightConfig
 {
-    private static readonly ModConfig config = new ModConfig("CaveLights", version: 1);
+    private static readonly ModConfig config = new ModConfig(version: 1, save: false);
 
     public static bool enableFlashlightsDecay = config.GetBool("enableFlashlightsDecay");
 

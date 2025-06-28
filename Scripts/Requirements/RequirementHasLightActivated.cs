@@ -4,7 +4,7 @@ public class RequirementHasLightActivated : TargetedCompareRequirementBase
 {
     public override bool IsValid(MinEventParams _params)
     {
-        if (!ParamsValid(_params))
+        if (!IsValid(_params))
         {
             return false;
         }
